@@ -7,6 +7,7 @@ import 'package:mobile_app/pages/loginPage.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import 'package:mobile_app/config.dart';
+import 'package:mobile_app/pages/teddy.dart';
 
 
 
@@ -88,6 +89,10 @@ class RegisterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // MediaQuery for responsive design
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
+
     return Scaffold(
       backgroundColor: Colors.purple,
       appBar: AppBar(
@@ -95,7 +100,7 @@ class RegisterPage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         title: Padding(
-          padding: EdgeInsets.only(top: 30.0),
+          padding: EdgeInsets.only(top: 10.0),
           child: GestureDetector(
             onTap: () {
               // Navigate to the login page when the image is tapped
@@ -113,7 +118,7 @@ class RegisterPage extends StatelessWidget {
       ),
 
       body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
+        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
         child: ListView(
           children: [
             SizedBox(
@@ -143,10 +148,13 @@ class RegisterPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 20),
-            MyTextField(
-              controller: emailController,
-              hintText: "Email",
-              obscureText: false,
+            SizedBox(
+              child: MyTextField(
+                controller: emailController,
+                hintText: "Email",
+                obscureText: false,
+              ),
+              width: screenWidth * 0.5, // 80% of screen width
             ),
             const SizedBox(height: 20),
             MyTextField(
@@ -187,7 +195,7 @@ class RegisterPage extends StatelessWidget {
                               TextSpan(
                                 text: "By continuing you accept our ",
                                 style: TextStyle(
-                                  color: Colors.grey,
+                                  color: const Color.fromRGBO(158, 158, 158, 1),
                                   fontSize: 14,
                                 ),
                               ),
@@ -370,4 +378,6 @@ Padding(
   
   void setState(Null Function() param0) {}
 }
+ 
+
  

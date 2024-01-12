@@ -31,9 +31,11 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
+  google_sign_in: ^5.1.1
   http:
   shared_preferences:
   jwt_decoder:
+  flutter_blue_plus: ^1.30.3
   
 
 
@@ -95,3 +97,7 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+  
+
+  
